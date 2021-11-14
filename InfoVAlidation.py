@@ -82,8 +82,24 @@ class Validation():
         except Exception as e:
             print("Exception",e)
 
+    def validate_email(email):
+        """
+        Description:
+            This function is to validate email.
+        Args:
+            email: email to validate
+        Returns:
+            boolean result
+        """        
+        try:
+            return bool(re.match("^[0-9A-Za-z]+(([._+-]{0,1})[0-9A-Za-z]+)*@[0-9A-Za-z]+.[a-z]{2,4}.([a-z]{2,3})*$", email))
+
+        except Exception as e:
+            print("Exception",e)
+
 if __name__ == "__main__":
     print(Validation.validate_first_name("Pavan"))
     print(Validation.validate_last_name("Nakate"))
     print(Validation.validate_mobile("91 9960748875"))
     print(Validation.validate_password("Pavan@699"))
+    print(Validation.validate_email("pavannakate03@gmail.com"))

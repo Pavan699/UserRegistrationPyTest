@@ -81,5 +81,23 @@ class UserValidationTest(unittest.TestCase):
         self.assertFalse(Validation.validate_password("sfdgs8hga"))
         self.assertFalse(Validation.validate_password("AWEFAG$45"))
 
+    def test_ValidEmail(self):
+        """
+        Description: 
+            In this test case when given a valid email should return true.
+        """        
+        self.assertTrue(Validation.validate_email("pavannakate03@gmail.com"))
+        self.assertTrue(Validation.validate_email("dadamane2@yahoo.com.in"))
+        self.assertTrue(Validation.validate_email("xyz.99@abc.co.in"))
+        
+
+    def test_InvalidEmail(self):
+        """
+        Description: 
+            In this test case when given a invalid email should return false.
+        """        
+        self.assertFalse(Validation.validate_email("Pavan@.com"))
+        self.assertFalse(Validation.validate_email("abc@.com.my"))
+
 if __name__ == '__main__':
     unittest.main()
