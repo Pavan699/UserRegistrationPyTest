@@ -5,7 +5,7 @@
 @Last Modified time: None
 @Title : To solve unit test cases for user details. 
 '''
-from InfoValidation import Validation
+from InfoVAlidation import Validation
 import unittest
 
 class UserValidationTest(unittest.TestCase):
@@ -47,6 +47,22 @@ class UserValidationTest(unittest.TestCase):
         """        
         self.assertFalse(Validation.validate_first_name("nakate"))
         self.assertFalse(Validation.validate_first_name("Mane12"))
+
+    def test_ValidMobileNumber(self):
+        """
+        Description: 
+            In this test case when given a valid mobile number should return true.
+        """        
+        self.assertTrue(Validation.validate_mobile("91 9960748875"))
+        
+    
+    def test_InvalidMobileNumber(self):
+        """
+        Description: 
+            In this test case when given a invalid mobile number should return false.
+        """        
+        self.assertFalse(Validation.validate_mobile("88 9451457854"))
+        self.assertFalse(Validation.validate_mobile("9198564"))
 
 if __name__ == '__main__':
     unittest.main()
