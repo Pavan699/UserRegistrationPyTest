@@ -98,3 +98,29 @@ def test_invalidPassword():
 
     for passwords in invalidPassword:
         assert Validation.validate_password(passwords) == False
+
+def test_validEmail():
+    """
+    Description: 
+        In this test case when given a valid email should return true.
+    """ 
+
+    validEmails = ["abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com",
+                    "abc111@abc.com", "abc-100@abc.net", "abc.100@abc.com.au"]
+
+    for mails in validEmails:
+        assert Validation.validate_email(mails) == True
+
+
+def test_invalidEmail():
+    """
+    Description: 
+        In this test case when given a invalid email should return false.
+    """ 
+
+    inValidEmails = ["abc","abc@.com.my","abc123@gmail.a","abc123@.com",
+                     "abc123@.com.com",".abc@abc.com","abc()*@gmail.com","abc@%*.com",
+                     "abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com"]
+
+    for mails in inValidEmails:
+        assert Validation.validate_email(mails) == False
