@@ -89,6 +89,9 @@ class UserValidationTest(unittest.TestCase):
         self.assertTrue(Validation.validate_email("pavannakate03@gmail.com"))
         self.assertTrue(Validation.validate_email("dadamane2@yahoo.com.in"))
         self.assertTrue(Validation.validate_email("xyz.99@abc.co.in"))
+        self.assertTrue(Validation.validate_email("xyz-100@yahoo.com"))
+        self.assertTrue(Validation.validate_email("xyz.100@yahoo.com"))
+        self.assertTrue(Validation.validate_email("xyz-100@abc.net"))
         
 
     def test_InvalidEmail(self):
@@ -97,7 +100,11 @@ class UserValidationTest(unittest.TestCase):
             In this test case when given a invalid email should return false.
         """        
         self.assertFalse(Validation.validate_email("Pavan@.com"))
-        self.assertFalse(Validation.validate_email("abc@.com.my"))
+        self.assertFalse(Validation.validate_email("xyz@.com.my"))
+        self.assertFalse(Validation.validate_email(".xyz@xyz.com"))
+        self.assertFalse(Validation.validate_email("xyz()*@gmail.com"))
+        self.assertFalse(Validation.validate_email("xyz@gmail.com.aa.au.co.in"))
+        self.assertFalse(Validation.validate_email("xyz@xyz@gmail.com"))
 
 if __name__ == '__main__':
     unittest.main()
