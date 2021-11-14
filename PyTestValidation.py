@@ -75,3 +75,26 @@ def test_invalidMobileNumber():
 
     for numbers in invalidMobileNumber:
         assert Validation.validate_mobile(numbers) == False
+
+def test_validPassword():
+    """
+    Description: 
+        In this test case when given a valid password should return true.
+    """ 
+
+    validPassword = ["Pavan@699", "$DadaNam3", "Acde7854$"]
+
+    for passwords in validPassword:
+        assert Validation.validate_password(passwords) == True
+
+
+def test_invalidPassword():
+    """
+    Description: 
+        In this test case when given a invalid password should return false.
+    """
+
+    invalidPassword = ["Abcd1234", "Raghu#*", "guddi34", "$akkal56", "RAFTAR67*"]
+
+    for passwords in invalidPassword:
+        assert Validation.validate_password(passwords) == False
