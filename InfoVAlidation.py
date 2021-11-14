@@ -64,7 +64,26 @@ class Validation():
         except Exception as e:
             print("Exception",e)
 
+    def validate_password(password):
+        """
+        Description:
+            This function is to validate password.
+            Password contain minimum 8 letters.
+            Password contain one upper and lower case.
+            Password contain one numeric and special character.
+        Args:
+            password: Password to validate
+        Returns:
+            boolean result
+        """        
+        try:
+            return bool(re.match("^(?=.*\d)(?=.*[@#$%&])(?=.*[a-z])(?=.*[A-Z]).{8,}$", password))
+
+        except Exception as e:
+            print("Exception",e)
+
 if __name__ == "__main__":
     print(Validation.validate_first_name("Pavan"))
     print(Validation.validate_last_name("Nakate"))
     print(Validation.validate_mobile("91 9960748875"))
+    print(Validation.validate_password("Pavan@699"))

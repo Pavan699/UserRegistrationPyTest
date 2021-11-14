@@ -64,5 +64,22 @@ class UserValidationTest(unittest.TestCase):
         self.assertFalse(Validation.validate_mobile("88 9451457854"))
         self.assertFalse(Validation.validate_mobile("9198564"))
 
+    def test_ValidPassword(self):
+        """
+        Description: 
+            In this test case when given a valid password should return true.
+        """        
+        self.assertTrue(Validation.validate_password("Abc$123d"))
+        self.assertTrue(Validation.validate_password("Pavan#18"))
+
+
+    def test_InvalidPassword(self):
+        """
+        Description: 
+            In this test case when given a invalid password should return false.
+        """        
+        self.assertFalse(Validation.validate_password("sfdgs8hga"))
+        self.assertFalse(Validation.validate_password("AWEFAG$45"))
+
 if __name__ == '__main__':
     unittest.main()
