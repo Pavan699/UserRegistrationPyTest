@@ -52,3 +52,26 @@ def test_invalidLastName():
 
     for names in invalidLastName:
         assert Validation.validate_last_name(names) == False
+
+def test_validMobileNumber():
+    """
+    Description: 
+        In this test case when given a valid mobile number should return true.
+    """ 
+
+    validMobileNumber = ["91 9960748875", "91 9966332211"]
+
+    for numbers in validMobileNumber:
+        assert Validation.validate_mobile(numbers) == True
+
+
+def test_invalidMobileNumber():
+    """
+    Description: 
+        In this test case when given a invalid mobile number should return false.
+    """ 
+
+    invalidMobileNumber = ["919452147754", "9874563214", "91-9654789665", "5566889900", "91 9854521"]
+
+    for numbers in invalidMobileNumber:
+        assert Validation.validate_mobile(numbers) == False
