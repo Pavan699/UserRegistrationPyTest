@@ -1,0 +1,30 @@
+[
+    {
+    "firstName": "Pavan",
+    "lastName": "Nakate",
+    "mobile": "91 9960748875",
+    "password": "Pavan#699",
+    "email": "pavannakate03@gmail.com"
+    },
+    {
+    "firstName": "Ganesh",
+    "lastName": "Rananaware",
+    "mobile": "91 6677889955",
+    "password": "ganesH@123",
+    "email": "ganesh.r123@gmail.com"
+    },
+    {
+    "firstName": "Ravi",
+    "lastName": "Rathod",
+    "mobile": "91 8822331100",
+    "password": "ravi&R99",
+    "email": "ravi.rathod99@gmail.com"
+    },
+    {
+    "firstName": "Spruti",
+    "lastName": "Kale",
+    "mobile": "91 7744110033",
+    "password": "Pavan#699",
+    "email": "kalespruti00@gmail.com"
+    }
+]
